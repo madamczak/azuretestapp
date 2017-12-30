@@ -1,5 +1,5 @@
 # -*- coding: utf8 -*-
-from logger import Logger
+from cars.operations.logger import Logger
 
 import sqlite3
 

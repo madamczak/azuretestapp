@@ -94,7 +94,6 @@ def view_model_data(request, brand_name, model_name):
     for vid in verIds:
         vinfo = database.getBrandInfo(vid)
         if len(vinfo) > 2:
-            print vinfo[2]
             versionNames.add(vinfo[2].replace(" ", "_"))
 
     return render(request, 'model.html', {'items': rows, 'chosen_brand': brand_name, 'chosen_model': model_name, 'versions': versionNames})
