@@ -10,7 +10,7 @@ def home_page(request):
     brandIds = database.getAllParsedBrandsIds()
     brandNames = set()
     for brandId in brandIds:
-        name = database.getBrandInfo(brandId)[0].capitalize()
+        name = database.getBrandInfo(brandId)[0].decode("utf-8").capitalize()
         if name == "Bmw":
             brandNames.add("BMW")
         elif name == "Pozostae":
@@ -52,8 +52,9 @@ def view_brand_data(request, brand_name):
     modelIds = database.getAllBrandIdsOfBrand(brand_name)
     modelNames = set()
     for modelid in modelIds:
-        name = database.getBrandInfo(modelid)[1].capitalize()
-        modelNames.add(name.replace(" ", "_"))
+        name = database.getBrandInfo(modelid)[1].decode("utf-8") .capitalize()
+        nm = name.replace(" ", "_")
+        modelNames.add(nm)
 
     if brand_name == "Land":
         rows = database.getAllCarsOfBrand("Land Rover")
@@ -94,7 +95,7 @@ def view_model_data(request, brand_name, model_name):
     for vid in verIds:
         vinfo = database.getBrandInfo(vid)
         if len(vinfo) > 2:
-            versionNames.add(vinfo[2].replace(" ", "_"))
+            versionNames.add(vinfo[2].decode("utf-8").replace(" ", "_"))
 
     return render(request, 'model.html', {'items': rows, 'chosen_brand': brand_name, 'chosen_model': model_name, 'versions': versionNames})
 
