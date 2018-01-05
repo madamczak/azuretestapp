@@ -25,7 +25,7 @@ SECRET_KEY = 'xnut_@_^zr2rzf5f&sn%n_s=8@=m$$567a97-)4x%s=k7dt1cm'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['usedcardata.azurewebsites.net', "127.0.0.1"]
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -77,13 +77,13 @@ WSGI_APPLICATION = 'carsprojector.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': os.path.join(BASE_DIR, 'refactor_test4.db'),
     },
 
-    'cardata': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'refactor_test4.db'),
-    }
+    # 'cardata': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': os.path.join(BASE_DIR, 'refactor_test6.db'),
+    # }
 }
 
 
