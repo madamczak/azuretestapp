@@ -25,7 +25,7 @@ SECRET_KEY = 'xnut_@_^zr2rzf5f&sn%n_s=8@=m$$567a97-)4x%s=k7dt1cm'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['usedcardata.azurewebsites.net', '127.0.0.1']
 
 
 # Application definition
